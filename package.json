@@ -1,0 +1,23 @@
+{
+  "name": "helloworld",
+  "description": "Simple hello world sample in Node",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">= 12.0.0"
+  },
+  "author": "Google LLC",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^16.0.2",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "promise-mysql": "^5.0.3",
+    "socket.io": "^4.0.0"
+  }
+}
