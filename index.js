@@ -2,9 +2,9 @@
 const express = require("express");
 const mysql = require("promise-mysql");
 require('dotenv').config();
-const app = express();
 
-// app.use(express.urlencoded({extended: false}));
+// Eestos son los middleware necesarios para nuestro servicio 
+const app = express();
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 app.use(express.json({ limit: "50mb" }));
 app.use((req, res, next) => {
@@ -34,7 +34,7 @@ const createPoolAndEnsureSchema = async () =>
 
     const {
       DB_USER, DB_PASSWORD, DB_HOST, DB_NAME
-    } = process.env;
+    } = process.env; // variables de entorno 
 
 const createUnixSocketPool = async (config) => {
   // Establish a connection to the database
@@ -108,7 +108,7 @@ app.post("/", async (req, res) => {
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`estamos en el ${PORT}`);
-});
+}); 
 
 process.on("unhandledRejection", (err) => {
   console.error(err);
